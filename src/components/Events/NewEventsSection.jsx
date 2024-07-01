@@ -2,13 +2,13 @@ import { useQuery } from '@tanstack/react-query';
 import LoadingIndicator from '../UI/LoadingIndicator.jsx';
 import ErrorBlock from '../UI/ErrorBlock.jsx';
 import EventItem from './EventItem.jsx';
-import eventsFetcher from '../../util/http.jsx'
+import {fetchEvents} from "../../util/https.jsx";
 
 export default function NewEventsSection() {
 
-  const {data,isFetching,isError,error} = useQuery({
+  const { data, isFetching, isError, error } = useQuery({
     queryKey: ["events"],
-    queryFn: eventsFetcher
+    queryFn: fetchEvents,
   });
 
 
